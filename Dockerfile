@@ -14,5 +14,5 @@ WORKDIR ${HOME_DIR}
 
 EXPOSE 80
 
-CMD /bin/sh -c "uvicorn main:app --port ${PORT}"
+CMD ["uvicorn", "main:app", "--port", "$PORT"]
 
