@@ -9,13 +9,10 @@ RUN apk add --no-cache --virtual .build-deps gcc libc-dev \
 ENV HOME_DIR /usr/src/app
 ENV PYTHONPATH=${HOME_DIR}
 
-COPY ./start.sh ${HOME_DIR}/start.sh
-RUN chmod +x ${HOME_DIR}/start.sh
-
-COPY ./main.py ${HOME_DIR}
+COPY ./main.py ${HOME_DIR}/main.py
 WORKDIR ${HOME_DIR}
 
 EXPOSE 80
 
-CMD ["./start.sh"]
+CMD /bin/sh -c "uvicorn main:app --port ${PORT}"
 
