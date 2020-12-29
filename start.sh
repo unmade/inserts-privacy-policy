@@ -1,5 +1,5 @@
 #! /usr/bin/env sh
 set -e
 
-uvicorn main:app
+uvicorn main:app --port "${PORT}"
 
