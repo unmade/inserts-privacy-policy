@@ -10,6 +10,7 @@ ENV HOME_DIR /usr/src/app
 ENV PYTHONPATH=${HOME_DIR}
 
 COPY ./main.py ${HOME_DIR}/main.py
+COPY ./policy.py ${HOME_DIR}/policy.py
 WORKDIR ${HOME_DIR}
 
 EXPOSE 80
